@@ -2,4 +2,19 @@
     border-radius: 8px;
     border: 1px solid black;
     width: 30%;
+    padding: 10px;
+
+
+    &.dark{
+        /* Estilos para o tema dark */
+        background-color: #151515;
+        color: #fff;
+        border: 1px solid #303030;
+      }
+    
+      &.light{
+        /* Estilos para o tema light */
+        background-color: #f5f5f5;
+        color: #333;
+      }
 }
