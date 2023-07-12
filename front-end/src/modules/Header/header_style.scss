@@ -10,9 +10,42 @@ header {
     border-bottom: 1px solid black;
 
     h2{
-        margin: 1em 1em;
+        margin: 1em 1.5em;
     }
-  
+
+    .left_header{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 40%;
+    }
+    
+    .theme_button {
+      margin-right: 1em;
+      appearance: none;
+      border: none;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    
+      /* Estilos para indicar que o botão é clicável */
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .theme_button:hover {
+      background-color: #ddd; /* Cor de fundo quando o botão é hover */
+    }
+    
+    .theme_button:focus {
+      outline: none; /* Remover a outline padrão ao focar no botão */
+    }
+    
+    .theme_button:active {
+      background-color: #ccc; /* Cor de fundo quando o botão é clicado */
+    }
+
+
     &.dark {
       border: 1px solid #303030;
     }

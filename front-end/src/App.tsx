@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Header } from './modules/Header'
-import './app_style.scss'
+import Modal from './modules/Modal';
 import { TaskList } from './modules/Tasklist'
+import './app_style.scss'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showModal, setModal] = useState(false)
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -22,18 +24,29 @@ function App() {
 
   return (
     <div className={`${themeClass}`}>
-      <Header    
+      <Header
         toggleMode={toggleMode}
         themeClass={themeClass}
+        setModal={() => setModal(!showModal)}
+
       />
       <div className='main '>
         <div className='tasklist_title'>
           <h1>Lista de tarefas</h1>
           <p>aqui você pode verificar quais tarefas estão cadastradas</p>
         </div>
-        <TaskList task_list={taskes} theme={themeClass}  />
+        <TaskList task_list={taskes} theme={themeClass} />
       </div>
+      {showModal && (
+        <Modal show={showModal} onClose={() => setModal(false)}>
+          <div className="card">CARDZERA</div>
+          <div className="card">CARDZERA</div>
+        </Modal>
+      )}
+
+
     </div>
+
   );
 }
 
