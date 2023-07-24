@@ -15,7 +15,7 @@ interface HeaderProps {
             <h2>Bem vindo</h2>
             <button className='insert_task' onClick={props.setModal}>nova tarefa</button>
         </div>
-        <button className='theme_button' onClick={props.toggleMode}>Toggle Mode</button>
+        <button className={`theme_button ${props.themeClass}`} onClick={props.toggleMode}>Toggle Mode</button>
       </header>
     );
   }

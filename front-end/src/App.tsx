@@ -7,6 +7,7 @@ import './app_style.scss'
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showModal, setModal] = useState(false)
+  const [task_list,set_task_list] = useState(get_task_list)
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -22,8 +23,12 @@ function App() {
     },
   ];
 
+  function get_task_list(){
+
+  }
+
   return (
-    <div className={`${themeClass}`}>
+    <div className={`main_wrapper ${themeClass}`}>
       <Header
         toggleMode={toggleMode}
         themeClass={themeClass}
@@ -38,9 +43,7 @@ function App() {
         <TaskList task_list={taskes} theme={themeClass} />
       </div>
       {showModal && (
-        <Modal show={showModal} onClose={() => setModal(false)}>
-          <div className="card">CARDZERA</div>
-          <div className="card">CARDZERA</div>
+        <Modal show={showModal} onClose={() => setModal(false)} theme={themeClass}>
         </Modal>
       )}
 
@@ -48,6 +51,9 @@ function App() {
     </div>
 
   );
+
+
+
 }
 
 export default App;

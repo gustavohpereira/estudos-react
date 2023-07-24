@@ -1,0 +1,54 @@
+form{
+    background-color: var(--background-color);
+    width: 100%;
+    text-align: center;
+
+    .input_wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 1em;
+        margin: 2em 0;
+        width: 100%;
+
+        label{
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        input{
+            border: var(--border);
+            background-color: var(--background-hover);
+            color: var(--text-color);
+            border-radius: 20px;
+            width: 80%;
+            padding: 1em;
+            input:focus {
+                outline: none;
+                /* Remover a outline padrão ao focar no botão */
+              }
+            
+        }
+        
+    }
+
+    button{
+        border: var(--border);
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-radius: 8px;
+        width: 80%;
+        padding: 0.5em;
+        margin-top: 2em;
+
+    }
+    button:hover{
+        background-color: var(--background-hover);
+        transition: 0.5s;
+        cursor: pointer;
+
+    }
+
+    
+}
