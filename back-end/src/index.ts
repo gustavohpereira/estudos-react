@@ -1,5 +1,4 @@
 import express from 'express';
-import sqlite3 from 'sqlite3';
 import Repository from './DB/Repository';
 import cors from 'cors';
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './form_style.scss'
 import axios from 'axios';
+import Repository from '../../database/Repository';
 
 interface FormProps{
   theme: string;
@@ -11,7 +12,7 @@ export const Form = (props: FormProps) => {
   const [title,set_title] = useState('')
   const [description,set_description] = useState('')
 
-  const handle_submit = (event:any) => {
+  const handle_submit = (event:Event) => {
     event.preventDefault();
     
     const formData = {
@@ -19,15 +20,9 @@ export const Form = (props: FormProps) => {
       description : description
     };
 
-    axios.post('http://localhost:3000/insert', formData)
-      .then((response) => {
-        console.log("acessou o port insert_task");
-        console.log(response.data); // Mensagem enviada pelo servidor
+    Repository.insert_task(formData)
 
-      })
-      .catch((error) => {
-        console.error('Erro ao enviar o formulário:', error);
-      });
+
   };
 
 

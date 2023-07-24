@@ -7,7 +7,6 @@ import './app_style.scss'
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showModal, setModal] = useState(false)
-  const [task_list,set_task_list] = useState(get_task_list)
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -22,10 +21,6 @@ function App() {
       id: '0',
     },
   ];
-
-  function get_task_list(){
-
-  }
 
   return (
     <div className={`main_wrapper ${themeClass}`}>
