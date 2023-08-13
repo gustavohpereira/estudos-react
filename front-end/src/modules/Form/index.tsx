@@ -19,9 +19,8 @@ export const Form = (props: FormProps) => {
       title: title,
       description : description
     };
-
+    
     Repository.insert_task(formData)
-
 
   };
 

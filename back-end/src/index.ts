@@ -25,6 +25,17 @@ app.post('/insert', (req, res) => {
   res.send('Tarefa inserida com sucesso.');
 });
 
+app.get('/tasklist',(req,res) => {
+  rep.get_all_tasks((err, rows) => {
+    if (err) {
+      res.status(500).json({ error: 'Erro ao buscar os registros.' });
+    } else {
+      res.json(rows);
+    }
+  });
+  
+})
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });

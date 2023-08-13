@@ -2,13 +2,18 @@
 import express from 'express';
 import sqlite3 from 'sqlite3';
 
+interface Task{
+  title: string,
+  description: string
+};
+
 
 export default class Repository {
 
   private db: sqlite3.Database
   private table_name: string
 
-  constructor(table_name:string) {
+  constructor(table_name: string) {
     this.db = new sqlite3.Database('.database.sqlite', (err) => {
       if (err) {
         console.error('Erro ao abrir o banco de dados:', err);
@@ -54,10 +59,23 @@ export default class Repository {
 
       }
     );
+
+  }
+
+  public get_all_tasks(callback: (err: Error | null, tasks: Task[] | null) => void){
+    this.db.all('SELECT title, description,id FROM tasks',(err,rows:Task[]) =>{
+      if(err){
+        console.error('Erro ao buscar os registros:', err);
+        callback(err, null);
+
+      }else{
+        callback(null,rows)
+      }
+
+    })
   }
 
 
-
-
 }
+
 

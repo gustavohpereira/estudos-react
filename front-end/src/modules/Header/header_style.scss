@@ -47,7 +47,7 @@ header {
   .theme_button {
     margin: 1em 1em;
   }
-  .insert_task{
+  .header_button{
 
     margin-right: 1em;
     appearance: none;
@@ -62,7 +62,7 @@ header {
     transition: background-color 0.3s ease-in-out;
   }
 
-  .insert_task:hover{
+  .header_button:hover{
     transition: 1s ;
     background-color: var(--background-hover);
     border: var(--border);
